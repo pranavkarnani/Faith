@@ -1,0 +1,6 @@
+framework module NRSpeechToText {
+  umbrella header "NRSpeechToText-umbrella.h"
+
+  export *
+  module * { export * }
+}

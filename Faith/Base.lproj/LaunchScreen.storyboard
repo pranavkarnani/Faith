@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="54V-TL-8KD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gcK-D7-koT">
+            <objects>
+                <viewController id="54V-TL-8KD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hQ8-Sb-Z7O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gPq-OQ-8dx">
+                                <rect key="frame" x="131.5" y="277.5" width="112.5" height="112.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gPq-OQ-8dx" secondAttribute="height" multiplier="1:1" id="22R-nB-f6E"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="gPq-OQ-8dx" firstAttribute="width" secondItem="hQ8-Sb-Z7O" secondAttribute="width" multiplier="0.3" id="8Ht-gE-Qtf"/>
+                            <constraint firstItem="gPq-OQ-8dx" firstAttribute="centerX" secondItem="hQ8-Sb-Z7O" secondAttribute="centerX" id="SAE-Ax-BZK"/>
+                            <constraint firstItem="gPq-OQ-8dx" firstAttribute="centerY" secondItem="hQ8-Sb-Z7O" secondAttribute="centerY" id="ilu-vG-ab9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1bz-zM-XGU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exk-XJ-Lc4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-959" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="134" height="141"/>
+    </resources>
+</document>
