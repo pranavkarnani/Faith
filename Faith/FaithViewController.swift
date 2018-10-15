@@ -56,6 +56,12 @@ class FaithViewController: UIViewController, UIGestureRecognizerDelegate {
         
         request?.setMappedCompletionBlockSuccess({ (request, response) in
             let response = response as! AIResponse
+            if(response.result.metadata.intentName.contains("Happy-Intent")) {
+                self.happyView()
+            }
+            if(response.result.metadata.intentName.contains("Sad-Intent")) {
+                self.sadView()
+            }
             let resp = response.result.fulfillment.messages[0]
             
             for(key,_) in response.result.parameters {
@@ -181,6 +187,21 @@ class FaithViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             state = 1
         }
+    }
+    
+    func happyView() {
+        view.backgroundColor = .white
+        logo.image = UIImage(named: "happy")
+        collection.backgroundColor = .white
+        speechText.textColor = .black
+    }
+    
+    func sadView() {
+        view.backgroundColor = .black
+        logo.image = UIImage(named: "logo")
+        collection.backgroundColor = .black
+        speechText.textColor = .white
+        
     }
 }
 
