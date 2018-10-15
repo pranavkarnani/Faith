@@ -121,4 +121,10 @@ class Services {
             }
         }
     }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        DispatchQueue.global(qos: .background).async {
+            URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+        }
+    }
 }

@@ -8,31 +8,20 @@
 
 import Foundation
 
-struct MusicJSON : Decodable {
-    var myData: [Music]
-}
-
-struct Music : Decodable {
+struct Music {
     var title : String
     var preview : String
     var artist : String
     var image : String
 }
 
-struct PlacesJSON : Decodable {
-    var myData : [Places]
-}
-
-struct Places : Decodable {
+struct Places {
     var name : String
     var address : String
+    var image : String
 }
 
-struct quotesJSON : Decodable {
-    var quotes : [Quote]
-}
-
-struct Quote : Decodable {
+struct Quote {
     var quote : String;
     var author: String
     var category : String

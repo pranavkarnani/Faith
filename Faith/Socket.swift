@@ -8,36 +8,30 @@
 
 import Foundation
 import SocketIO
-var socketData : [Any] = []
+
+var data : NSDictionary = [:]
+
 class Socket {
     
     static let sharedInstance = Socket()
     
-    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://6bc799c3.ngrok.io")! as URL)
+    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://5c292a84.ngrok.io")! as URL)
     
     func establishConnection() {
         socket.connect()
         socket.on("emit") {(dataArray, ack) -> Void in
-            print(dataArray)
-            
-        }
-        socket.on("update") {(dataArray, ack) -> Void in
-            let json = dataArray[0]
-            let clustered = json as! [String:AnyObject]
-           
-            
-            
+            data = dataArray[0] as! NSDictionary
         }
     }
     
     func closeConnection() {
         socket.disconnect()
     }
-    
-    func listenToServer() {
-        socket.on("emit") {(dataArray, ack) -> Void in
-            print(dataArray)
-            socketData = dataArray
-        }
+}
+
+extension Decodable {
+    init(from any: Any) throws {
+        let data = try JSONSerialization.data(withJSONObject: any)
+        self = try JSONDecoder().decode(Self.self, from: data)
     }
 }
