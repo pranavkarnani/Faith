@@ -15,7 +15,7 @@ class Socket {
     
     static let sharedInstance = Socket()
     
-    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://5c292a84.ngrok.io")! as URL)
+    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://67dc7413.ngrok.io")! as URL)
     
     func establishConnection() {
         socket.connect()

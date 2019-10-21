@@ -80,11 +80,11 @@ class PreferencesViewController: UIViewController, MagneticDelegate {
             addData(data: music)
         }
         else if(x==1) {
-            cardText.text = "Choose exactly 3 different places of visit"
+            cardText.text = "Choose exactly 3 different types of cuisine"
             addData(data: cuisine)
         }
         else if(x==2) {
-            cardText.text = "Choose exactly 3 different types of cuisine"
+            cardText.text = "Choose exactly 3 different types of places"
             addData(data: places)
         }
             

@@ -37,8 +37,7 @@ class FaithViewController: UIViewController, UIGestureRecognizerDelegate {
                             self.query = result
                             self.processQuery(completion: { (text) in
                                 self.textToSpeech(text: text)
-                            })
-                            
+                            })  
                         })
                     }
                 }
@@ -56,11 +55,13 @@ class FaithViewController: UIViewController, UIGestureRecognizerDelegate {
         
         request?.setMappedCompletionBlockSuccess({ (request, response) in
             let response = response as! AIResponse
-            if(response.result.metadata.intentName.contains("Happy-Intent")) {
-                self.happyView()
-            }
-            if(response.result.metadata.intentName.contains("Sad-Intent")) {
-                self.sadView()
+            if(response.result.metadata.intentName != nil) {
+                if(response.result.metadata.intentName.contains("Happy-Intent")) {
+                    self.happyView()
+                }
+                if(response.result.metadata.intentName.contains("Sad-Intent")) {
+                    self.sadView()
+                }
             }
             let resp = response.result.fulfillment.messages[0]
             
@@ -68,6 +69,7 @@ class FaithViewController: UIViewController, UIGestureRecognizerDelegate {
                 let x = key as? String ?? ""
                 
                 if(x.contains("music")) {
+                    self.places.removeAll()
                     self.selected = "music"
                     let mydata = data["message"] as! NSDictionary
                     let y = mydata["mydata"] as! NSArray
@@ -84,6 +86,7 @@ class FaithViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
                     
                 else if(x.contains("place")) {
+                    self.musicData.removeAll()
                     self.selected = "place"
                     let mydata = data["message"] as! NSDictionary
                     let y = mydata["mydata"] as! NSArray
